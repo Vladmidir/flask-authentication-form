@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title%} List of users {% endblock%}</h1>
+
+    {% for user in users %}
+        <div class="user">
+            <p> {{ user }}'s password is {{users[user]}}<!--Why do we use double braces? It will otherwise render it as text :)--> </p>
+        </div>
+    {% endfor %}<!--Oops! Almost forgot to close it. Apparantely you gotta close it like in Java-->
+    <hr>
+    <form action="./login">
+        <input type="submit" value="Login">
+    </form>
+    <br>
+    <form action="./register">
+        <input type="submit" value="Register">
+    </form>
+
+{% endblock %}

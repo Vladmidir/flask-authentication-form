@@ -1,0 +1,23 @@
+<!--We don't need the doctype, because we inherit it from the base.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> {% block title %} Please LogIn {% endblock %}</h1>
+    <form method="POST"> <!--send the form to the server as a POST request. I wonder how it knows WHERE EXACTLY to send the post
+    and from where the content can be accessed from? Is it the route? Or is it any global function?-->
+        <label for="username">Username</label>
+        <br>
+        <!--What does that value attribute mean? It restores the data the user has entered,
+            so it does not dissapear when things go wrong (eg. user forgets to fill out a field)-->
+        <!--To my earlier question, request is a global object! As I get it, 'request' represents the current POST request
+        that is being sent. When we access 'username' we get the exact username we were trying to send to the server-->
+        <input type="text" name="username" placeholder="user" value="{{ request.form['username'] }}">
+        <br>
+        <br>
+        <label for="password">Password</label>
+        <br>
+        <input type="text" name="password" placeholder="password" value="{{request.form['password'] }}">
+        <br><br>
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}

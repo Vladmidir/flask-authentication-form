@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block header %} Register {% endblock %}</h1>
+    <form method="POST">
+        <label for="username">Username</label>
+        <br>
+        <input type="text" name="username" placeholder="user" value="{{request.form['username']}}">
+        <br>
+        <br>
+        <label for="password">Password</label>
+        <br>
+        <input type="text" name="password" placeholder="password" value="{{request.form['password'] }}">
+        <br>
+        <br>
+        <label for="password-confirm">Password</label>
+        <br>
+        <input type="text" name="password-confirm" placeholder="password" value="{{request.form['password-confirm'] }}">
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
+    

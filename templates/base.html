@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+        .alert{
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+
+    </style><!--Set this later. Should I really be adding stles in the base.html?-->
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index')}}">FlaskApp</a>
+        <a href="#">About</a>
+    </nav><!--why do we need a nav?-->
+    <hr>
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{message}}</div>
+        {% endfor %}
+        {% block content %} {% endblock%}
+    </div>
+</body>
+</html>
