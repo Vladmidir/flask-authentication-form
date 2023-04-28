@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1> {% block title %} Welcome Home {% endblock %} </h1> <!--How do I show the specific username here?-->
+    <h1> {% block title %} Welcome Home  {{ user }} {% endblock %} </h1> <!--How do I show the specific username here?-->
 {% endblock %}

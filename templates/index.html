@@ -5,7 +5,7 @@
 
     {% for user in users %}
         <div class="user">
-            <p> {{ user }}'s password is {{users[user]}}<!--Why do we use double braces? It will otherwise render it as text :)--> </p>
+            <p> {{ user[0] }}'s password is {{user[1]}}<!--Why do we use double braces? It will otherwise render it as text :)--> </p>
         </div>
     {% endfor %}<!--Oops! Almost forgot to close it. Apparantely you gotta close it like in Java-->
     <hr>
